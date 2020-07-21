@@ -1,10 +1,9 @@
-#Installation of MassBank
+# Installation of MassBank
 MassBank needs a MariaDB database running somewhere, a tomcat server for the webapp and the maven build system for installation. This can be provided directly by the hosting system or in docker containers. Although in principle it might be possible to run this webapp on a windows server, we haven't tested it and it will not run out of the box.
 
 Besides running MassBank on a server system it is also possible to run it in the integrated tomcat server within eclipse for easy development and debugging. Our development platform is Ubuntu 18.04.
 
 ## Install in eclipse for development
-
 Needed for a working development environment:
 1. MySQL database - we use a MariaDB docker container
 2. Eclipse Java EE IDE for Web Developers.
