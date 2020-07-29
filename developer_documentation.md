@@ -98,7 +98,6 @@ Make also sure that you customise your superuser if using the default bootstrap.
 ## Main branches
 We use two main branches, `main` and `dev`. All development should happen in `dev` and we define every commit to `main` to be a release. When the source code in the `dev` branch reaches a stable point and is ready to be released, all of the changes should be merged back into `main` somehow and then tagged with a release number. How this is done in detail will be discussed further on. To use all of the command lines below the [github/hub](https://docs.docker.com/install/linux/docker-ce/ubuntu/) tool is required.
 
-
 ## Supporting branches
 The different types of branches we may use are:
 * Feature branches
@@ -153,9 +152,9 @@ $ git push --set-upstream origin release-2.1
 When the state of the release branch is ready to become a real release, the release branch is merged into `main` with a pull request and tagged for easy future reference.
 
 ```
-$ hub pull-request -m 'Release version 2.1'
+$ hub pull-request -m 'Release version 2.1' -b main
 ```
-Wait for all checks to finish. Now the release can be merged to `main`. 
+Wait for all checks to finish. There are most likely conflicts, which need to be resolved first. If this is done, the release can be merged to `main`. 
 ```
 $ git checkout main
 $ git merge --no-ff release-2.1
