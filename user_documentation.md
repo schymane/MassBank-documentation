@@ -8,7 +8,7 @@ In this section we collect pointers to existing software implementations that re
 
 This command line converter https://github.com/MassBank/MassBank2NIST has been developed (despite its name) to convert bi-directional between MassBank records and the NIST-like Bruker `*.library` format.
 
-### MassBank to NIST MSP convertion
+### MassBank to NIST MSP conversion
 
 The computational mass spectrometry team has a Windows GUI converter to create `*.msp` files from MassBank records:
 http://prime.psc.riken.jp/compms/others/main.html#Massbank2msp
