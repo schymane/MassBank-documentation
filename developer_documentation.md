@@ -263,7 +263,8 @@ $ git checkout -b release-2019.09 dev
 Switched to a new branch "release-2019.09"
 $ ./bump-version.sh 2019.09
 Set version of release to 2019.09. This version will validate against the main branch of MassBank-web.
-git commit -a -m "Bumped version number to 2019.09"
+git add .travis.yml VERSION
+git commit -m "Bumped version number to 2019.09"
 [release-2019.09 74d9424] Bumped version number to 2019.09
 $ git push --set-upstream origin release-2019.09
 ```
@@ -271,7 +272,7 @@ $ git push --set-upstream origin release-2019.09
 When the state of the release branch is ready to become a real release, the release branch is merged into `main` with a pull request and tagged for easy future reference.
 
 ```
-$ hub pull-request -m 'Release version 2019.09'
+$ hub pull-request -m 'Release version 2019.09' -b main
 ```
 Wait for all checks to finish. Now the release can be merged to `main` and tagged as release. 
 ```
