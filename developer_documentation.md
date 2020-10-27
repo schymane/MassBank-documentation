@@ -23,7 +23,11 @@ Download [Apache Tomcat](http://tomcat.apache.org/) and extract it to your prefe
 Then create a Tomcat server in eclipse. 
 
 ### Populate database
-Before the MassBank webapp can serve the data the database needs to be filled. Clone the data from [MassBank-data](https://github.com/MassBank/MassBank-data) to a local directory and make sure the 'DataRootPath' in 'massbank.conf' is correctly set to your data repo. Run '/MassBank-lib/src/main/java/massbank/RefreshDatabase.java' from your data repo to populate your database.
+Before the MassBank webapp can serve the data the database needs to be filled.
+
+First otion is to clone the data from [MassBank-data](https://github.com/MassBank/MassBank-data) to a local directory and make sure the 'DataRootPath' in 'massbank.conf' is correctly set to your data repo. Run '/MassBank-lib/src/main/java/massbank/RefreshDatabase.java' from to populate your database. This way a `dev`-snapshot of the data can be installed.
+
+Second option is to download the sql dump from the latest release and import it into the database with `mysql -u root -h 127.0.0.1 -p < MassBank-2020.10.sql`.
 
 ### Run MassBank webapp
 Run the MassBank-project on the Tomcat server and access MassBank at [http://localhost:8080/MassBank/](http://localhost:8080/MassBank/).
