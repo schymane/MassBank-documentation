@@ -75,7 +75,10 @@ With this layout its easy to have several instances with different codebase / da
 
 ## Install as server system with Vagrant
 A `Vagrantfile` is provided for easy installation of a MassBank-server. This config creates a Ubuntu VM with IP `192.168.35.18`. Inside this VM the `docker-compose` mechanism as described above is used to create a MassBank-server on port 8080. Additionally a Apache2 http server is installed as reverse proxy. The config can be found in `conf/apache2`. Please modify if needed. The final MassBank site will be available at [https://192.168.35.18/MassBank](https://192.168.35.18/MassBank/). The installation uses the MassBank-data repository from `../MassBank-data`. You can modify the location in the Vagrantfile. The installation can be started with `vagrant up`.
- 
+
+## Sitemaps, robots and scrapers
+MassBank will serve a [sitemap index](https://massbank.eu//MassBank/sitemapindex.xml) which points to the actual sitemaps containing links to the individual [sitempas](https://massbank.eu/MassBank/sitemap/sitemap1.xml) with a maximum of 50k entries each. These sitemaps can be used by search engines or for semantic data extraction. 
+
 ## PIWIK log analyser (https://piwik.org/)
 The default MassBank server installation includes the PIWIK log analyser. Consider that user tracking has privacy issues.
 The default preset follows very strict rules according to http://piwik.org/docs/privacy/ and only the following usage data:
