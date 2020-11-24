@@ -161,13 +161,16 @@ When the state of the release branch is ready to become a real release, the rele
 ```
 $ hub pull-request -m 'Release version 2.1' -b main
 ```
-Wait for all checks to finish. There are most likely conflicts, which need to be resolved first. If this is done, the release can be merged to `main`. 
+Wait for all checks to finish. There are most likely conflicts, which need to be resolved first.
+```
+$ git merge main
+```
+Resolve conflicts, commit and push.
+
+If this is done, the release can be merged to `main`. 
 ```
 $ git checkout main
 $ git merge --no-ff release-2.1
-```
-There might be conflicts. Resolve and commit them.
-```
 $ git push origin main
 $ git tag -a 2.1 -m 'Release version 2.1'
 $ git push origin 2.1
