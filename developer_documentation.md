@@ -174,6 +174,7 @@ $ git merge --no-ff release-2.1
 $ git push origin main
 $ git tag -a 2.1 -m 'Release version 2.1'
 $ git push origin 2.1
+$ hub release create -m 'Release version 2.1' 2.1
 ```
 If there were any changes in the release branch we need to merge them back to `dev`.
 
@@ -190,6 +191,7 @@ Now we are done and the release branch may be removed.
 ```
 $ git branch -d release-2.1
 Deleted branch release-2.1 (was ff452fe).
+$ git push origin --delete release-2.1
 ```
 
 ### Hotfix branches
