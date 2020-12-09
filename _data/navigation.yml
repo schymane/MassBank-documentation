@@ -1,0 +1,12 @@
+# Belongs at: /_data/navigation.yml
+
+- title: Home
+  url: /
+  sublinks:
+    - title: user documentation
+      url: /user_documentation.html
+    - title: contributor documentation
+      url: /contributor_documentation.html
+    - title: developer documentation
+      url: /developer_documentation.html
+
