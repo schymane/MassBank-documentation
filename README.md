@@ -1,3 +1,5 @@
+{% include navigation.html}
+
 ## Welcome to MassBank documentation
 
 There are three sections available:
