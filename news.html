@@ -22,17 +22,56 @@
 	<title>MassBank News</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" type="text/css" href="css/w3.css">
-	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="css/massbank.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,600;1,400;1,600">
 	<script src="js/iframeResizer.contentWindow.min.js"></script>
 </head>
 <div class="w3-container w3-large">
 	<h4>
 		<b>News</b>
 	</h4>
+
 	<p>Dear friends of MassBank,</p>
+	<p style="font-size: 85%;"><i><b>Update 26 November 2020: </b></i> The new MassBank data release is available and deployed on MassBank Europe. The release version is <a href="https://github.com/MassBank/MassBank-data/releases/tag/2020.11" target=_blank>2020.11</a> with the DOI: <a href="https://doi.org/10.5281/zenodo.4289361" target=_blank>10.5281/zenodo.4289361</a>. The whole MassBank content is available in NIST msp format for the first time! The <a href="https://github.com/MassBank/MassBank-data/releases/download/2020.11/MassBank_NIST.msp" target=_blank>MassBank.msp</a> file contains all records to be used in venodors' software library search. Enjoy and report your experiences, please!</p>
+
+	<p style="font-size: 85%;"><i><b>Update 27 October 2020: </b></i> The new MassBank data release is available and deployed on MassBank Europe. The release version is <a href="https://github.com/MassBank/MassBank-data/releases/tag/2020.10" target=	_blank>2020.10</a> with the DOI: <a href="https://doi.org/10.5281/zenodo.4134734" target=_blank>10.5281/zenodo.4134734</a>. We provide now a sql dump named <a href="https://github.com/MassBank/MassBank-data/releases/download/2020.10/MassBank-2020.10.sql" target=_blank>MassBank-2020.10.sql</a>. This dump contains all record information to support your implementations. Visit the <a href=https://github.com/MassBank/MassBank-documentation/blob/gh-pages/developer_documentation.md#populate-database>populate-database</a> section of the documentation for details.
+	</p>
+	<p style="font-size: 85%;"><i><b>Update 20 July 2020: </b></i> The MassBank developers and MassBank contributors are proud to be part of the <a href="https://archiveprogram.github.com/" target=_blank>GitHub Archive Programm</a>. MassBank is now human code heritage as a long term and active open source community!
 	
-	<p>Welcome to MassBank!</p>
+	<p style="font-size: 85%;"><i><b>Update 16 March 2020: </b></i> We are proud to announce the publication of new MS library related paper <a href="https://doi.org/10.1186/s12302-020-00314-9" target=_blank>A European proposal for quality control and quality assurance of tandem mass spectral libraries</a>. All related mass spectra are available <a href="https://massbank.eu/MassBank/Result.jsp?type=rcdidx&idxtype=site&srchkey=HBM4EU&sortKey=name&sortAction=1&pageNo=1&exec=" target=_blank>HBM4EU library</a>.</p>
+	
+	<p style="font-size: 85%;"><i><b>Update 09 March 2020: </b></i> MassBank Europe is now on <a href="https://pubchem.ncbi.nlm.nih.gov/source/23999" target=_blank>PubChem</a>. See also on <a href="https://twitter.com/ESchymanski/status/1236954416005160961" target=_blank>Twitter</a>.</p>
+
+	<h4>
+		<b>Links</b>
+	</h4>
+	
+	<p style="font-size: 85%;"><i><b>MassBank community on GitHub</b></i></p>
+	<ul style="font-size: 85%;">
+		<li><a href="https://github.com/MassBank" target="_blank">MassBank community on GitHub</a>: Checkout for more information on the community and how to contribute to Massbank.</li>
+		<li><a href="https://github.com/MassBank/MassBank-data" target=_blank>MassBank Open Access records on GitHub</a>: Contribute your mass spectra and download MassBank spectra for your purposes and re-use.</li>
+		<li><a href="https://github.com/MassBank/MassBank-web/issues" target=_blank>MassBank Issue Tracker on GitHub</a>: Leave your feedback and issues on MassBank to improve MassBank (GitHub account required).</li>
+		<li><a href="https://github.com/MassBank/MassBank-data/releases" target=_blank>MassBank Data Releases</a> are available on GitHub</li>
+		<li><a href="https://zenodo.org/communities/massbankeu/?page=1&size=20" target=_blank>MassBank community on zenodo</a>: Checkout for data releases, reports and presentations regarding MassBank.</li>
+	</ul>
+	
+	<p style="font-size: 85%;"><i><b>Metabolomics Spectrum Identifier Resolver</b></i></p>
+	<p style="font-size: 85%;">The <a href="https:///metabolomics-usi.ucsd.edu" target=_blank>
+	Metabolomics Spectrum Identifier Resolver</a> is a tool for the high resolution imaging of mass spectra from <a href="https://gnps.ucsd.edu/ProteoSAFe/static/gnps-splash.jsp" target=_blank>GNPS/MassIVE</a>, <a href="https://www.ebi.ac.uk/metabolights">MetaboLights</a>, <a href = "http://ms2lda.org" target=_blank>MS2LDA</a> and <a href="https://massbank.eu/MassBank">MassBank</a> for publications and other purposes. For example <a href=
+	"https://massbank.eu/MassBank/RecordDisplay.jsp?id=AC000372&dsn=AAFC" target=_blank>MassBank Record: AC000372</a> resolves in 
+	<a href="https://metabolomics-usi.ucsd.edu/spectrum/?usi=mzspec:MASSBANK:AC000372" target=_blank>metalolomics-usi-visulation of AC000372</a>.</p>
+		
+	<p style="font-size: 85%;"><i><b>MassBank RESTful API</b></i></p>
+	<p style="font-size: 85%;">A basic RESTful API with simple search functions is available:</p>
+	<ul style="font-size: 85%;">
+		<li><a href="https://massbank.eu/MassBank/Result.jsp?splash=splash10-0002-0900000000-f236794b68cee8f6798c">Search by SPLASH</a></li>
+		<li><a href="https://massbank.eu/MassBank/Result.jsp?inchikey=RYYVLZVUVIJVGH-UHFFFAOYSA-N">Search by InChIKey</a></li>
+		<li><a href="https://massbank.eu/MassBank/Result.jsp?inchikey=RYYVLZVUVIJVGH">Search by a single block of InChIKey</a></li>
+	</ul>
+	<p style="font-size: 85%;">An improved API is in development. Your use cases and ideas for enhancements are appreciated.</p>
 
 </div>
 
