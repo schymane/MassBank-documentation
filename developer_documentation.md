@@ -75,7 +75,10 @@ With this layout its easy to have several instances with different codebase / da
 
 ## Install as server system with Vagrant
 A `Vagrantfile` is provided for easy installation of a MassBank-server. This config creates a Ubuntu VM with IP `192.168.35.18`. Inside this VM the `docker-compose` mechanism as described above is used to create a MassBank-server on port 8080. Additionally a Apache2 http server is installed as reverse proxy. The config can be found in `conf/apache2`. Please modify if needed. The final MassBank site will be available at [https://192.168.35.18/MassBank](https://192.168.35.18/MassBank/). The installation uses the MassBank-data repository from `../MassBank-data`. You can modify the location in the Vagrantfile. The installation can be started with `vagrant up`.
- 
+
+## Sitemaps, robots and scrapers
+MassBank will serve a [sitemap index](https://massbank.eu//MassBank/sitemapindex.xml) which points to the actual sitemaps containing links to the individual [sitempas](https://massbank.eu/MassBank/sitemap/sitemap1.xml) with a maximum of 50k entries each. These sitemaps can be used by search engines or for semantic data extraction. 
+
 ## PIWIK log analyser (https://piwik.org/)
 The default MassBank server installation includes the PIWIK log analyser. Consider that user tracking has privacy issues.
 The default preset follows very strict rules according to http://piwik.org/docs/privacy/ and only the following usage data:
@@ -158,16 +161,20 @@ When the state of the release branch is ready to become a real release, the rele
 ```
 $ hub pull-request -m 'Release version 2.1' -b main
 ```
-Wait for all checks to finish. There are most likely conflicts, which need to be resolved first. If this is done, the release can be merged to `main`. 
+Wait for all checks to finish. There are most likely conflicts, which need to be resolved first.
+```
+$ git merge main
+```
+Resolve conflicts, commit and push.
+
+If this is done, the release can be merged to `main`. 
 ```
 $ git checkout main
 $ git merge --no-ff release-2.1
-```
-There might be conflicts. Resolve and commit them.
-```
 $ git push origin main
 $ git tag -a 2.1 -m 'Release version 2.1'
 $ git push origin 2.1
+$ hub release create -m 'Release version 2.1' 2.1
 ```
 If there were any changes in the release branch we need to merge them back to `dev`.
 
@@ -184,6 +191,7 @@ Now we are done and the release branch may be removed.
 ```
 $ git branch -d release-2.1
 Deleted branch release-2.1 (was ff452fe).
+$ git push origin --delete release-2.1
 ```
 
 ### Hotfix branches
