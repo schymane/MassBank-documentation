@@ -23,3 +23,5 @@ To submit data or to change existing records:
 3. Create a pull request against the dev branch.
 
 Your pull request will be validated and you will receive a report whether your records meet the [MassBank specs](https://github.com/MassBank/MassBank-web/blob/main/Documentation/MassBankRecordFormat.md). If everything is ok, your content will be integrated into MassBank.
+
+If you are not able to provide your contribution via a pull request, please fill a issue at the [issue board](https://github.com/MassBank/MassBank-data/issues) or get in contact via email.
