@@ -6,17 +6,15 @@ Contributors are welcome to provide new spectra to MassBank. New spectra should 
 The preferred software to generate MassBank records is [RMassBank](https://www.bioconductor.org/packages/release/bioc/html/RMassBank.html). RMassBank is in continuous development. Hence, use the latest version available, please. If you are using your own pipeline please consider to provide it to other users(please open an issue).
 
 ## Validate new record files locally
-Before new record files are accepted to MassBank-data, they need to pass the validation. This will be done automatically if a pull request is created. Its also possible to validate record files locally in advance. To validate new record files locally please clone this repo. Under the `.scripts` directory create the source tree of the [MassBank-web](https://github.com/MassBank/MassBank-web) project and compile it, because the [Validator](https://github.com/MassBank/MassBank-web/blob/main/MassBank-Project/MassBank-lib/src/main/java/massbank/Validator.java) program is needed.
-You can use the following commands:
+Before new record files are accepted to MassBank-data, they need to pass the validation. This will be done automatically if a pull request is created. Its also possible to validate record files locally in advance. To validate new record files locally please clone the [MassBank-web] repo and compile it.
 ```
-git clone --depth 1 -q https://github.com/MassBank/MassBank-web.git .scripts/MassBank-web
-mvn -q -f .scripts/MassBank-web/MassBank-Project/MassBank-lib/pom.xml install
+git clone --depth 1 -q https://github.com/MassBank/MassBank-web.git
+mvn -f MassBank-web/MassBank-Project/MassBank-lib/pom.xml package
 ```
-Now its possible to validate record files locally. `validate.sh` supports validation of a single record file, several files as well as one or several directories containing record files, eg. 
+The [Validator](https://github.com/MassBank/MassBank-web/blob/main/MassBank-Project/MassBank-lib/src/main/java/massbank/Validator.java) executable can be found at `MassBank-web/MassBank-Project/MassBank-lib/target/MassBank-lib/MassBank-lib/bin/Validator`. If you want to copy the executable to a different place, make sure that the environment variable `LIB_DIR` inside the executable points to the abolut path of `MassBank-web/MassBank-Project/MassBank-lib/target/MassBank-lib/MassBank-lib/lib`. Now its possible to validate record files locally. `Validator` supports validation of a single record file, several files as well as one or several directories containing record files, eg. 
 ```
-./.scripts/validate.sh AAFC
+MassBank-web/MassBank-Project/MassBank-lib/target/MassBank-lib/MassBank-lib/bin/Validator <my record directory>
 ```
-To validate the full date repository use the `validate_all.sh` script.
 
 ## Submit new records to MassBank-data or modify existing records
 To submit data or to change existing records:
