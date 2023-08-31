@@ -108,8 +108,6 @@ We use two branches, `main` and `dev`. All development should happen in `dev` an
 ### Release branches
 Branch off from: `dev`
 
-Must merge back into: `dev` and `main`
-
 Branch naming: `release-*`
 
 Release branches support preparation of a new production release. They allow for minor bug fixes and preparing the version number for a release. It is exactly at the start of a release branch that the upcoming release gets assigned a version number.
@@ -120,41 +118,43 @@ $ git checkout -b release-2.1 dev
 Switched to a new branch "release-2.1"
 $ ./bump-version.sh 2.1
 $ git add *pom.xml
-$ git commit -a -m "Bumped version number to 2.1"
+$ git commit -m "Bumped version number to 2.1"
 [release-2.1 74d9424] Bumped version number to 2.1
 $ git push --set-upstream origin release-2.1
 ```
+
 #### Finishing a release branch
 When the state of the release branch is ready to become a real release, the release branch is merged into `main` with a pull request and tagged for easy future reference.
 
 ```
 $ hub pull-request -m 'Release version 2.1' -b main
 ```
-Wait for all checks to finish. There are most likely conflicts, which need to be resolved first.
+Wait for all checks to finish.
 ```
-$ git merge main
+$ git pull origin main
+$ git checkout main
+$ git merge release-2.2.4
 ```
 Resolve conflicts, commit and push.
 
 If this is done, the release can be merged to `main`. 
 ```
-$ git checkout main
-$ git merge --no-ff release-2.1
-$ git push origin main
-$ git tag -a 2.1 -m 'Release version 2.1'
-$ git push origin 2.1
-$ hub release create -m 'Release version 2.1' 2.1
+$ git push -u origin main
 ```
-If there were any changes in the release branch we need to merge them back to `dev`.
 
+Its adviced to merge the changes of the `release/main` branch back to `dev`.
 ```
 $ git checkout dev
-Switched to branch 'dev'
-$ git merge --no-ff release-2.1
-Merge made by recursive.
-(Summary of changes)
+$ git merge main
 ```
-This may well lead to merge conflicts, which needs to be fixed. If so, fix it and commit.
+
+Set a new version number to the `dev` branch.
+```
+$ ./bump-version.sh 2.1.1-SNAPSHOT
+$ git add *pom.xml
+$ git commit -m "Bumped version number to 2.1"
+git push
+```
 
 Now we are done and the release branch may be removed.
 ```
@@ -163,60 +163,14 @@ Deleted branch release-2.1 (was ff452fe).
 $ git push origin --delete release-2.1
 ```
 
-### Hotfix branches
-Branch off from: `main`
-
-Must merge back into: `dev` and `main`
-
-Branch naming: `hotfix-*`
-
-Hotfix branches are very much like release branches in that they are also meant to prepare for a new production release. They arise from the necessity to act immediately upon an undesired state of a live production version.
-
-#### Creating a hotfix branch
-```
-$ git checkout -b hotfix-2.1.1 main
-Switched to a new branch "hotfix-2.1.1"
-$ ./bump-version.sh 2.1.1
-Files modified successfully, version bumped to 2.1.1.
-git commit -a -m "Bumped version number to 2.1.1"
-[hotfix-2.1.1 74d9424] Bumped version number to 2.1.1
-
-```
-Then, fix the bug and commit the fix in one or more separate commits.
-
-#### Finishing a hotfix branch
-When finished, the bugfix needs to be merged back into `main`, but also needs to be merged back into `dev`.
-First, update `main` and tag the release.
-```
-$ hub pull-request -m 'Release version 2.1.1'
-```
-Wait for all checks to finish. Now the release can be merged to `main`. 
+### Creating a release
+After the merge to the main branch a tag and release needs to be created.
 ```
 $ git checkout main
-$ git merge --no-ff hotfix-2.1.1
-$ git push origin main
-$ git tag -a 2.1.1 -m 'Release version 2.1.1'
-$ git push origin 2.1.1
+$ git tag -a "2.1" -m "tag release 2.1"
+$ git push origin 2.1
+$ hub release create 2.1
 ```
-Next, include the bugfix in `dev`, too:
-
-```
-$ git checkout dev
-Switched to branch 'dev'
-$ git merge --no-ff hotfix-2.1.1
-Merge made by recursive.
-(Summary of changes)
-
-```
-The one exception to the rule here is that, when a release branch currently exists, the hotfix changes need to be merged into that release branch as well.
-Finally, remove the temporary branch:
-
-```
-$ git branch -d hotfix-2.1.1
-Deleted branch hotfix-2.1.1 (was abbe5d6).
-```
-
-
 
 # Release process of [MassBank-data](https://github.com/MassBank/MassBank-data)
 The release strategy of MassBank-data is similar to the one of MassBank-web and is described below. Additionally it needs to be taken care of the validation and the codebase for the validation.
