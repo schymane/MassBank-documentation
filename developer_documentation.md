@@ -103,7 +103,7 @@ Make also sure that you customise your superuser if using the default bootstrap.
 # Release strategy of MassBank-web
 
 ## Branches
-We use two branches, `main` and `dev`. All development should happen in `dev` and we define every major commit to `main` to be a release. When the source code in the `dev` branch reaches a stable point and is ready to be released, all of the changes should be merged back into `main` and then tagged with a release number. How this is done in detail will be discussed further on. To use all of the command lines below the [github/hub](https://hub.github.com/) tool is required.
+We use two branches, `main` and `dev`. All development should happen in `dev` or a feature branch and we define every major commit to `main` to be a release. When the source code in the `dev` branch reaches a stable point and is ready to be released, all of the changes should be merged into `main` and then tagged with a release number. How this is done in detail will be discussed further on. To use all of the command lines below the [github/hub](https://hub.github.com/) tool is required.
 
 ### Release branches
 Branch off from: `dev`
