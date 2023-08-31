@@ -102,39 +102,8 @@ Make also sure that you customise your superuser if using the default bootstrap.
 
 # Release strategy of MassBank-web
 
-## Main branches
-We use two main branches, `main` and `dev`. All development should happen in `dev` and we define every commit to `main` to be a release. When the source code in the `dev` branch reaches a stable point and is ready to be released, all of the changes should be merged back into `main` somehow and then tagged with a release number. How this is done in detail will be discussed further on. To use all of the command lines below the [github/hub](https://docs.docker.com/install/linux/docker-ce/ubuntu/) tool is required.
-
-## Supporting branches
-The different types of branches we may use are:
-* Feature branches
-* Release branches
-* Hotfix branches
-
-### Feature branches
-Branch off from: `dev`
-
-Must merge back into: `dev`
-
-Branch naming: anything except `main`, `dev`, `release-*` or `hotfix-*`
-
-Feature branches are used to develop new features.
-
-#### Creating a feature branch
-```
-$ git checkout -b myfeature dev
-Switched to a new branch "myfeature"
-```
-#### Incorporating a finished feature on dev
-```
-$ git checkout dev
-Switched to branch 'develop'
-$ git merge --no-ff myfeature
-(Summary of changes)
-$ git branch -d myfeature
-Deleted branch myfeature
-$ git push origin dev
-```
+## Branches
+We use two branches, `main` and `dev`. All development should happen in `dev` and we define every major commit to `main` to be a release. When the source code in the `dev` branch reaches a stable point and is ready to be released, all of the changes should be merged back into `main` and then tagged with a release number. How this is done in detail will be discussed further on. To use all of the command lines below the [github/hub](https://hub.github.com/) tool is required.
 
 ### Release branches
 Branch off from: `dev`
@@ -150,8 +119,8 @@ Release branches support preparation of a new production release. They allow for
 $ git checkout -b release-2.1 dev
 Switched to a new branch "release-2.1"
 $ ./bump-version.sh 2.1
-Files modified successfully, version bumped to 2.1.
-git commit -a -m "Bumped version number to 2.1"
+$ git add *pom.xml
+$ git commit -a -m "Bumped version number to 2.1"
 [release-2.1 74d9424] Bumped version number to 2.1
 $ git push --set-upstream origin release-2.1
 ```
