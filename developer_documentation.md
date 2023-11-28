@@ -173,7 +173,7 @@ $ hub release create 2.1
 ```
 
 # Release process of [MassBank-data](https://github.com/MassBank/MassBank-data)
-The release strategy of MassBank-data is similar to the one of MassBank-web and is described below. Additionally it needs to be taken care of the validation and the codebase for the validation.
+The release strategy of MassBank-data is similar to the one of MassBank-web and is described below. Additional care needs to be taken of the validation and the codebase for the validation.
 
 ## Main branches
 We use two main branches, `main` and `dev`. All development should happen in `dev` and we define every commit to `main` to be a release. When new data in the `dev` branch has reached a stable point and is ready to be released, all of the changes should be merged into `main` and then tagged with a release number. The data of `main` should be validated with the `main` of MassBank-web and the data of `dev` should be validated with `dev` of MassBank-web. If the data contains incompatible changes MassBank-web needs to be released first, because before a merge to `main` is possible a validation needs to be successfully. All versions which get a release tag in github are used by a webhook from zenodo and get a DOI attached. The authors list of the record at zenodo needs to be manually edited to contain `MassBank-consortium and its contributors`.
