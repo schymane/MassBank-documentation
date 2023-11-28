@@ -180,16 +180,8 @@ We use two main branches, `main` and `dev`. All development should happen in `de
 
 The release process is discussed in detail below. To use all of the command lines below the [github/hub](https://hub.github.com/) tool is required.
 
-### Release branches
-Release branches are created in preparation of a release.
-
-Branch off from: `dev`
-
-Branch naming: `release-*`
-
-Release branches support preparation of a new release. They allow for preparing the version number for a release.
-
-#### Creating a release branch
+### Creating a release
+Create a release branch from dev and prepare a new release.
 ```
 $ git checkout -b release-2019.09 dev
 Switched to a new branch "release-2019.09"
@@ -200,7 +192,6 @@ $ git commit -m "Bumped version number to 2019.09"
 $ git push --set-upstream origin release-2019.09
 ```
 
-#### Finishing a release branch
 When the state of the release branch is ready to become a real release, the release branch is merged into `main` with a pull request and tagged/released for easy future reference.
 
 ```
