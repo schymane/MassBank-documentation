@@ -199,21 +199,27 @@ $ hub pull-request -m 'Release version 2019.09' -b main
 ```
 Wait for all checks to finish. If all tests are successfull the release can be merged to `main` and tagged as release.
 ```
-git merge main
+git pull origin main
+git checkout main
+git merge release-2019.09
+git push -u origin main
+git branch -D release-2019.09
 ```
-Resolve conflicts and commit.
+
+After the merge to the main branch a tag for the release needs to be created.
 ```
 $ git checkout main
-$ git merge --no-ff release-2019.09
-$ git push origin main
-$ hub release create -m 'Release version 2019.09' 2019.09
+$ git tag -a "2019.09" -m "Release version 2019.09"
+$ git push origin 2019.09
 ```
-Now we are done and the release branch may be removed
+
+Create all additional release assets.
 ```
-$ git branch -d release-2019.09
-Deleted branch release-2019.09 (was ff452fe).
+$ hub release create 2019.09 -m 'Release version 2019.09' -a MassBank.json -a MassBank.sql -a MassBank_NIST.msp -a MassBank_RIKEN.msp -e 
 ```
-and the version of the `dev` branch should be incremented.
+
+
+Merge back main to dev and increment version of the `dev` branch.
 ```
 $ git checkout dev
 $ ./bump-version.sh 2019.09.1-SNAPSHOT
