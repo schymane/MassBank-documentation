@@ -213,18 +213,17 @@ $ git tag -a "2019.09" -m "Release version 2019.09"
 $ git push origin 2019.09
 ```
 
-Create all additional release assets.
+Create all additional release assets and create a release.
 ```
 $ hub release create 2019.09 -m 'Release version 2019.09' -a MassBank.json -a MassBank.sql -a MassBank_NIST.msp -a MassBank_RIKEN.msp -e 
 ```
 
-
 Merge back main to dev and increment version of the `dev` branch.
 ```
 $ git checkout dev
+$ git merge main
 $ ./bump-version.sh 2019.09.1-SNAPSHOT
-Set version of release to 2019.09.1-SNAPSHOT. This version will validate against the dev branch of MassBank-web.
-git commit -a -m "Bumped version number to 2019.09.1-SNAPSHOT"
-[dev 74d9424] Bumped version number to 2019.09.1-SNAPSHOT
+$ git add VERSION
+$ git commit -m "Bumped version number to 2019.09.1-SNAPSHOT"
 $ git push
 ```
