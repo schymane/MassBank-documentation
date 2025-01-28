@@ -2,7 +2,11 @@
 
 ## Conversion 
 
-In this section we collect pointers to existing software implementations that read / write / process MassBank records. 
+In this section we collect pointers to existing software implementations that read / write / process MassBank records or prepared data collections. 
+
+### Official release artifacts
+
+With every [release](https://github.com/MassBank/MassBank-data/releases) of MassBank-data we also release converted libraries in different flavours of msp. 
 
 ### MassBank and Bruker `*.library` conversion
 
@@ -16,7 +20,7 @@ Afterwards you can use `LIB2Nist` to create to the (binary) NIST library format 
 
 ### MassBank to NIST/RIKEN MSP conversion
 
-With the MassBank-web software we provide a cli tool `RecordExporter`. This software can convert MassBank records to different `msp` formats. The tool processes an arbitrary number of files specified on command line either directly or found recursively in the specified directories. All records are written in one single `msp` in the format specified by the format option.
+With the [MassBank-web](https://github.com/MassBank/MassBank-web) software we provide a cli tool `RecordExporter`. This software can convert MassBank records to different `msp` formats. The tool processes an arbitrary number of files specified on command line either directly or found recursively in the specified directories. All records are written in one single `msp` in the format specified by the format option.
 
 Usage: 
 ```
