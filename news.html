@@ -17,101 +17,246 @@
 <!-- Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA. -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<title>MassBank News</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" href="favicon.ico" type="image/x-icon">
-	<link rel="stylesheet" type="text/css" href="css/w3.css">
-	<link rel="stylesheet" type="text/css" href="css/massbank.css">
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,600;1,400;1,600">
-	<script src="js/iframeResizer.contentWindow.min.js"></script>
-</head>
+  <head>
+    <title>MassBank News</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="css/w3.css" />
+    <link rel="stylesheet" type="text/css" href="css/massbank.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,600;1,400;1,600"
+    />
+    <script src="js/iframeResizer.contentWindow.min.js"></script>
+  </head>
 
-<div class="w3-container w3-large">
-	<h4>
-		<b>News</b>
-	</h4>
+  <div class="w3-container w3-large">
+    <h4>
+      <b>News</b>
+    </h4>
 
-	<p>Dear friends of MassBank,</p>
-	
-	<p style="font-size: 85%;"><i><b>Update 05 January 2022: </b></i>
-	A Happy and Healthy New Year 2022 to all our friends and contributors! We deployed the new Massbank system version 2.1.13 fixing <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-44228" target=_blank>CVE-2021-44228</a>.
-	</p>
-	
-	<p style="font-size: 85%;"><i><b>Update 14 December 2021: </b></i>
-	We are excited to announce the new MassBank data release. We added 3251 new mass spectra of 304 compounds contributed kindly by Eawag, University of Antwerp, University of Athens, Mass Spectrometry Society of Japan, and INRAE France. The release version is <a href="https://github.com/MassBank/MassBank-data/releases/tag/2021.12" target=_blank>2021.12</a> with the DOI: <a href="https://doi.org/10.5281/zenodo.5775684" target=_blank>10.5281/zenodo.5775684</a>. We also deployed the new Massbank system version 2.1.11 fixing for example <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-44228" target=_blank>CVE-2021-44228</a>.
-	</p>
-		
-	<p style="font-size: 85%;"><i><b>Update 3 September 2021: </b></i> MassBank Europe spectra annotations in <a href="https://pubchem.ncbi.nlm.nih.gov" target=_blank>PubChem</a> are online now. What a great enhancement! MassBank Europe spectra go online via our new <a href="https://zenodo.org/record/5383034" target=_blank>MassBank  <b>&harr;</b> PubChem deposition / annotation repository pipeline</a> with code developed by <a href="https://git-r3lab.uni.lu/eci/pubchem/-/tree/master/massbank_eu">LCSB-ECI</a>. Find an example for <a href="https://pubchem.ncbi.nlm.nih.gov/compound/7389#section=LC-MS" target=_blank>arsanilic acid</a> at PubChem. See also the related <a href="https://twitter.com/ESchymanski/status/1432265879497191429?s=20" target=_blank>tweet</a>.
-	</p>
-	
-	<p style="font-size: 85%;"><i><b>Update 5 March 2021: </b></i>
-	The new MassBank data release is available and deployed on MassBank Europe. We added 159 new mass spectra containing tentatative
-	mass spectra of pesticide metabolites. They include Markush structures for the first time, for example a mass spectra of the tentatively identified 
-	<a href="https://massbank.eu/MassBank/RecordDisplay?id=HB002826" target=_blank>atrazine-desamine</a>.
-	The release version is <a href="https://github.com/MassBank/MassBank-data/releases/tag/2021.03" target=_blank>2021.03</a>
-	with the DOI: <a href="https://doi.org/10.5281/zenodo.4563726" target=_blank>10.5281/zenodo.4563726</a>.
-	The whole MassBank content is available in NIST msp format for integration in mass spectrometry software.
-	</p>
-	
-	<p style="font-size: 85%;"><i><b>Update 8 February 2021: </b></i>
-	The new MassBank data release is available and deployed on MassBank Europe. 
-	The release version is <a href="https://github.com/MassBank/MassBank-data/releases/tag/2021.02" target=_blank>2021.02</a>
-	with the DOI: <a href="https://doi.org/10.5281/zenodo.4506480" target=_blank>10.5281/zenodo.4506480</a>.
-	The whole MassBank content is available in NIST msp format for integration in mass spectrometry software.
-	The <a href="https://github.com/MassBank/MassBank-data/releases/download/2021.02/MassBank_NIST.msp" target=_blank>MassBank_NIST.msp</a>
-	file contains all records to be used in vendors' software library search. We also provide a msp file in RIKEN
-	format for integration in <a href="http://prime.psc.riken.jp/compms/msdial/main.html" target=_blank>MS DIAL</a>.
-	Enjoy and report your experiences, please!
-	</p>
+    <p style="font-size: 85%; color: blue">
+      <i><b>Update 28 Feb. 2025: </b></i>
+      MassBank 3.0 (beta) is now available! The new system is based on a modern,
+      improved backend and frontend architecture and will replace the current
+      MassBank system soon. <br />
+      The current prototypic webinterface is available at
+      <a href="https://msbi.ipb-halle.de/MassBank/" target="_blank"
+        >https://msbi.ipb-halle.de/MassBank/</a
+      >. <br />
+      Please, feel free to try it out and provide feedback and ideas to the
+      developers
+      <a href="https://github.com/MassBank/MassBank3" target="_blank">here</a>.
+    </p>
 
-	<p style="font-size: 85%;"><i><b>Update 20 July 2020: </b></i>
-	The MassBank developers and MassBank contributors are proud to be part of the
-	<a href="https://archiveprogram.github.com/" target=_blank>GitHub Archive Programm</a>.
-	MassBank is now human code heritage as a long term and active open source community!
-	</p>
-	
-	<p style="font-size: 85%;"><i><b>Update 16 March 2020: </b></i>
-	We are proud to announce the publication of new MS library related paper 
-	<a href="https://doi.org/10.1186/s12302-020-00314-9" target=_blank>A European proposal for quality control and quality assurance of tandem mass spectral libraries</a>.
-	All related mass spectra are available <a href="https://massbank.eu/MassBank/Result.jsp?type=rcdidx&idxtype=site&srchkey=HBM4EU&sortKey=name&sortAction=1&pageNo=1&exec=" target=_blank>HBM4EU library</a>.
-	</p>
-	
-	<p style="font-size: 85%;"><i><b>Update 09 March 2020: </b></i>
-	MassBank Europe is now on <a href="https://pubchem.ncbi.nlm.nih.gov/source/23999" target=_blank>PubChem</a>.
-	See also on <a href="https://twitter.com/ESchymanski/status/1236954416005160961" target=_blank>Twitter</a>.
-	</p>
+    <p style="font-size: 85%">
+      <i><b>Update 5 May 2025: </b></i>
+      A new MassBank-data release
+      <a
+        href="https://github.com/MassBank/MassBank-data/releases/tag/2025.05.1"
+        target="_blank"
+        >2025.05.1</a
+      >
+      with the DOI:
+      <a href="https://doi.org/10.5281/zenodo.15341877" target="_blank"
+        >10.5281/zenodo.15341877</a
+      >
+      is available. This release contains 646 new spectra from BfG, 265 new spectra
+      from NILU and 7 new spectra from CPU. We welcome our new contributor 
+      China Pharmaceutical University (CPU). Thank you for your contributions!
+    </p>
 
-	<h4>
-		<b>Links</b>
-	</h4>
-	
-	<p style="font-size: 85%;"><i><b>MassBank community on GitHub</b></i></p>
-	<ul style="font-size: 85%;">
-		<li><a href="https://github.com/MassBank" target="_blank">MassBank community on GitHub</a>: Checkout for more information on the community and how to contribute to Massbank.</li>
-		<li><a href="https://github.com/MassBank/MassBank-data" target=_blank>MassBank Open Access records on GitHub</a>: Contribute your mass spectra and download MassBank spectra for your purposes and re-use.</li>
-		<li><a href="https://github.com/MassBank/MassBank-web/issues" target=_blank>MassBank Issue Tracker on GitHub</a>: Leave your feedback and issues on MassBank to improve MassBank (GitHub account required).</li>
-		<li><a href="https://github.com/MassBank/MassBank-data/releases" target=_blank>MassBank Data Releases</a> are available on GitHub</li>
-		<li><a href="https://zenodo.org/communities/massbankeu/?page=1&size=20" target=_blank>MassBank community on zenodo</a>: Checkout for data releases, reports and presentations regarding MassBank.</li>
-	</ul>
-	
-	<p style="font-size: 85%;"><i><b>Metabolomics Spectrum Identifier Resolver</b></i></p>
-	<p style="font-size: 85%;">The <a href="https:///metabolomics-usi.ucsd.edu" target=_blank>
-	Metabolomics Spectrum Identifier Resolver</a> is a tool for the high resolution imaging of mass spectra from <a href="https://gnps.ucsd.edu/ProteoSAFe/static/gnps-splash.jsp" target=_blank>GNPS/MassIVE</a>, <a href="https://www.ebi.ac.uk/metabolights">MetaboLights</a>, <a href = "http://ms2lda.org" target=_blank>MS2LDA</a> and <a href="https://massbank.eu/MassBank">MassBank</a> for publications and other purposes. For example <a href=
-	"https://massbank.eu/MassBank/RecordDisplay.jsp?id=AC000372&dsn=AAFC" target=_blank>MassBank Record: AC000372</a> resolves in 
-	<a href="https://metabolomics-usi.ucsd.edu/spectrum/?usi=mzspec:MASSBANK:AC000372" target=_blank>metalolomics-usi-visulation of AC000372</a>.</p>
-		
-	<p style="font-size: 85%;"><i><b>MassBank RESTful API</b></i></p>
-	<p style="font-size: 85%;">A basic RESTful API with simple search functions is available:</p>
-	<ul style="font-size: 85%;">
-		<li><a href="https://massbank.eu/MassBank/Result.jsp?splash=splash10-0002-0900000000-f236794b68cee8f6798c">Search by SPLASH</a></li>
-		<li><a href="https://massbank.eu/MassBank/Result.jsp?inchikey=RYYVLZVUVIJVGH-UHFFFAOYSA-N">Search by InChIKey</a></li>
-		<li><a href="https://massbank.eu/MassBank/Result.jsp?inchikey=RYYVLZVUVIJVGH">Search by a single block of InChIKey</a></li>
-	</ul>
-	<p style="font-size: 85%;">An improved API is in development. Your use cases and ideas for enhancements are appreciated.</p>
+    <p style="font-size: 85%">
+      <i><b>Update 26 Nov. 2024: </b></i>
+      A new MassBank-data release
+      <a
+        href="https://github.com/MassBank/MassBank-data/releases/tag/2024.11"
+        target="_blank"
+        >2024.11</a
+      >
+      with the DOI:
+      <a href="https://zenodo.org/records/14221628 " target="_blank"
+        >10.5281/zenodo.14221628</a
+      >
+      is available. This release contains 2058 new spectra from Eawag and 133
+      from MSSJ, plus some fixes to EPA/Agilent records. We also welcome two new
+      contributors: IBED, University of Amsterdam (9 new spectra) and NILU (128
+      new spectra). Thank you for your contributions!
+    </p>
 
-</div>
+    <p style="font-size: 85%">
+      <i><b>Update 13 June 2024: </b></i>
+      MassBank EU representatives (Steffen, Emma) will be at the
+      <a href="https://www.metabolomics2024.org/" target="_blank"
+        >Metabolomics Society</a
+      >
+      meeting in Osaka June 16-20 2024 and meet with our Japanese colleagues.
+      Please come and see us there!
+    </p>
 
+    <p style="font-size: 85%">
+      <i><b>Update 5 June 2024: </b></i>
+      A new MassBank-data release
+      <a
+        href="https://github.com/MassBank/MassBank-data/releases/tag/2024.06"
+        target="_blank"
+        >2024.06</a
+      >
+      with the DOI:
+      <a href="https://zenodo.org/records/11487030 " target="_blank"
+        >10.5281/zenodo.11487030</a
+      >
+      is available. This release contains 750 new spectra from MSSJ and 1156 new
+      spectra from Eawag, plus welcomes "Shin-MassBank", a new contributor (plus
+      spectra). Thank you for your contributions!
+    </p>
+
+    <p style="font-size: 85%">
+      <i><b>Update 29 April 2024: </b></i>
+      Michele Stravs, our long-term MassBank.EU developer, consortium member and
+      lead programmer of
+      <a href="https://github.com/MassBank/RMassBank" target="_blank"
+        >RMassBank</a
+      >, announced he will seek new challenges later in 2024. Michele, thank you
+      so much for your contributions. We hope you will stay in touch! His
+      position at Eawag will be advertised shortly ...
+    </p>
+
+    <h4>
+      <b>Links</b>
+    </h4>
+
+    <p style="font-size: 85%">
+      <i><b>MassBank community on GitHub</b></i>
+    </p>
+    <ul style="font-size: 85%">
+      <li>
+        <a href="https://github.com/MassBank" target="_blank"
+          >MassBank community on GitHub</a
+        >: Checkout for more information on the community and how to contribute
+        to Massbank.
+      </li>
+      <li>
+        <a href="https://github.com/MassBank/MassBank-data" target="_blank"
+          >MassBank Open Access records on GitHub</a
+        >: Contribute your mass spectra and download MassBank spectra for your
+        purposes and re-use.
+      </li>
+      <li>
+        <a
+          href="https://github.com/MassBank/MassBank-web/issues"
+          target="_blank"
+          >MassBank Issue Tracker on GitHub</a
+        >: Leave your feedback and issues on MassBank to improve MassBank
+        (GitHub account required).
+      </li>
+      <li>
+        <a
+          href="https://github.com/MassBank/MassBank-data/releases"
+          target="_blank"
+          >MassBank Data Releases</a
+        >
+        are available on GitHub
+      </li>
+      <li>
+        <a
+          href="https://zenodo.org/communities/massbankeu/?page=1&size=20"
+          target="_blank"
+          >MassBank community on zenodo</a
+        >: Checkout for data releases, reports and presentations regarding
+        MassBank.
+      </li>
+    </ul>
+
+    <p style="font-size: 85%">
+      <i><b>MassBank Publications</b></i>
+    </p>
+    <ul style="font-size: 85%">
+      <li>
+        Elapavalore et al. (2023) Adding open spectral data to MassBank and
+        PubChem using open source tools to support non-targeted exposomics of
+        mixtures. Environ. Sci. Processes Impacts 25 1788-1801. DOI:<a
+          href="https://doi.org/10.1039/D3EM00181D"
+          target="_blank"
+          >10.1039/D3EM00181D</a
+        >.
+      </li>
+      <li>
+        Oberacher et al. (2020) A European proposal for quality control and
+        quality assurance of tandem mass spectral libraries. Environ. Sci.
+        Europe 32:43. DOI:<a
+          href="https://doi.org/10.1186/s12302-020-00314-9"
+          target="_blank"
+          >10.1186/s12302-020-00314-9</a
+        >.
+      </li>
+      <li>
+        Horai et al. (2010) MassBank: a public repository for sharing mass
+        spectral data for life sciences. J. Mass Spectrom. 45:7 703-714. DOI:<a
+          href="https://doi.org/10.1002/jms.1777"
+          target="_blank"
+          >10.1002/jms.1777</a
+        >.
+      </li>
+    </ul>
+
+    <p style="font-size: 85%">
+      <i><b>Metabolomics Spectrum Identifier Resolver</b></i>
+    </p>
+    <p style="font-size: 85%">
+      The
+      <a href="https:///metabolomics-usi.ucsd.edu" target="_blank">
+        Metabolomics Spectrum Identifier Resolver</a
+      >
+      is a tool for the high resolution imaging of mass spectra from
+      <a
+        href="https://gnps.ucsd.edu/ProteoSAFe/static/gnps-splash.jsp"
+        target="_blank"
+        >GNPS/MassIVE</a
+      >, <a href="https://www.ebi.ac.uk/metabolights">MetaboLights</a>,
+      <a href="http://ms2lda.org" target="_blank">MS2LDA</a> and
+      <a href="https://massbank.eu/MassBank">MassBank</a> for publications and
+      other purposes. For example
+      <a
+        href="https://massbank.eu/MassBank/RecordDisplay.jsp?id=AC000372&dsn=AAFC"
+        target="_blank"
+        >MassBank Record: AC000372</a
+      >
+      resolves in
+      <a
+        href="https://metabolomics-usi.ucsd.edu/spectrum/?usi=mzspec:MASSBANK:AC000372"
+        target="_blank"
+        >metalolomics-usi-visulation of AC000372</a
+      >.
+    </p>
+
+    <p style="font-size: 85%">
+      <i><b>MassBank RESTful API</b></i>
+    </p>
+    <p style="font-size: 85%">
+      A basic RESTful API with simple search functions is available:
+    </p>
+    <ul style="font-size: 85%">
+      <li>
+        <a
+          href="https://massbank.eu/MassBank/Result.jsp?splash=splash10-0002-0900000000-f236794b68cee8f6798c"
+          >Search by SPLASH</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://massbank.eu/MassBank/Result.jsp?inchikey=RYYVLZVUVIJVGH-UHFFFAOYSA-N"
+          >Search by InChIKey</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://massbank.eu/MassBank/Result.jsp?inchikey=RYYVLZVUVIJVGH"
+          >Search by a single block of InChIKey</a
+        >
+      </li>
+    </ul>
+  </div>
 </html>
