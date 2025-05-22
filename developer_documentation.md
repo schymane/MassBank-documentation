@@ -1,4 +1,4 @@
-# Installation and of MassBank
+# Installation of MassBank
 
 An installation guide and examples of how to use the REST API can be found in the README of the spectral reference library's next generation software product, [MassBank3](https://github.com/MassBank/MassBank3).
 
